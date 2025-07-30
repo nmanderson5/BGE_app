@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Results{% endblock %}
+
+{% block body %}
+    <h1>Results!</h1>
+    <form id="add-form" action="{{url_for('add_food')}}" method="POST">
+        <select name="area">
+            <option disabled selected value="">Area</option>
+            {% for area in areas %}
+            <option value="{{ area }}">{{ area }}</option>
+            {% endfor %}
+        </select>
+        <select name="food">
+            <option disabled selected value="">Food</option>
+            {% for result in results %}
+            <option value="{{ result.id }}">{{ result.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Add</button>
+    </form>
+    <div class="container">
+        {% for result in results %}
+        <p>Recipe: {{ result.name }}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

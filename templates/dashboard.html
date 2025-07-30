@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Add Accessories!</h1>
+        <form id="acc-form" action="{{url_for('add_acc')}}" method="post">
+            <select name="area" required>
+                <option disabled selected value="">Area</option>
+                {% for area in areas %}
+                <option value="{{ area }}">{{ area }}</option>
+                {% endfor %}
+            </select>
+            <select name="accessory" required>
+                <option disabled selected value="">Accessory</option>
+                {% for accessory in accessories %}
+                <option value="{{ accessory }}">{{ accessory }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Change</button>
+        </form>
+    </div>
+    <div class="container">
+        <form id="to-browse-form" action="{{url_for('browse')}}" method="get">
+            <button type="submit">Browse</button>
+        </form>
+    </div><br>
+    <div>
+        <h1>{{ username }}'s Egg</h1>
+        <h3>Temperature: {{ egg.temp }} </h3>
+        <form id="temperature-form" action="{{url_for('set_temp')}}" method="post">
+            <input type="number" name="temp" class="input-field" required>
+            <button type="submit">Change Temperature</button>
+        </form><br>
+        <form id="match-form" action="{{url_for('match_egg')}}" method="get">
+            <button type="submit">Match Egg</button>
+        </form>
+        <form id="clear-form" action="{{url_for('clear')}}" method="get">
+            <button type="submit">Clear Egg</button>
+        </form>
+    </div>
+    <div class="egg">
+        <p>Top</p>
+        <p>Food: {{ name_list["top_food"] }}</p>
+        <p>Accessory: {{ egg.top_acc }}</p>
+    </div>
+    <div class="egg">
+        <span class="left">
+            <p>Left Middle</p>
+            <p>Food: {{ name_list["left_mid_food"] }}</p>
+            <p>Accessory: {{ egg.left_mid_acc }}</p><br>
+            <p>Left Bottom</p>
+            <p>Food: {{ name_list["left_bot_food"] }}</p>
+            <p>Accessory: {{ egg.left_bot_acc }}</p>
+        </span>
+    </div>
+    <div class="egg">
+        <span class="right">
+            <p>Right Middle</p>
+            <p>Food: {{ name_list["right_mid_food"] }}</p>
+            <p>Accessory: {{ egg.right_mid_acc }}</p><br>
+            <p>Right Bottom</p>
+            <p>Food: {{ name_list["right_bot_food"] }}</p>
+            <p>Accessory: {{ egg.right_bot_acc }}</p>
+        </span>
+    </div>
+    <div class="container" style="height:5%;position: relative;bottom:0px;">
+        <form id="logout-form" action="{{url_for('logout')}}" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+{% endblock %}

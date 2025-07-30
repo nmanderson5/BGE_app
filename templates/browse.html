@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}Browse{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Browse for recipes!</h1>
+        <form id="search-form" action="{{url_for('browse')}}" method="POST">
+            <p>Search Term Optional</p>
+            <input type="text" name="term" placeholder="Search Term" class="input-field"/><br>
+            <p>Looking for an Entree?</p>
+            <label for="True"><input type="radio" id="True" name="entree" value="True" required>True</label>
+            <label for="False"><input type="radio" id="False" name="entree" value="False" required>False</label><br>
+            <p>Temperature:</p>
+            <input type="number" name="temp" class="input-field" required/><br>
+            <p>Cooking Method:</p>
+            <select name="cook_method" required>
+                <option selected value="both">Both</option>
+                <option value="direct">Direct</option>
+                <option value="indirect">Indirect</option>
+                <option value="wok">Wok</option>
+            </select><br>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+{% endblock %}
+

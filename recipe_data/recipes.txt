@@ -1,0 +1,46 @@
+Birria Tacos | 325 350 | True | indirect | Eggin with David Rose p.68
+Broccoli Caesar | 400 | False | direct | Eggin with David Rose p.27
+Smoked Tomahawk | 350 400 | True | both | Eggin with David Rose p.86
+Thai Green Curry Wings | 375 | False | direct | Eggin with David Rose p.15
+Flank Steak with Mango Salad | 450 | False | direct | Eggin with David Rose p.16
+Balsamic-Honey Glazed Carrots | 400 | False | direct | Eggin with David Rose p.43
+Pork Carnitas with Arepas | 350 375 400 | True | both | Eggin with David Rose p.54
+Korean Barbecue-Style Short Ribs | 425 | True | direct | Eggin with David Rose p.75
+Party Ribs | 275 | True | indirect | FOGO https://www.youtube.com/watch?v=qSd3jWpmIhg&t=295s
+Whole Chicken | 350 | True | indirect | FOGO https://www.youtube.com/watch?v=QP5HyCnT88o&t=276s
+Dinosaur Eggs | 350 | False | indirect | FOGO https://www.youtube.com/watch?v=0dU1FQOQdUY&t=518s
+BBQ Cupcakes | 400 | False | indirect | FOGO https://www.youtube.com/watch?v=3veX-nn1wF0&t=378s
+Hoisin Duck Drumettes | 350 | False | direct | Eggin with David Rose p.14
+Wings with Alabama White BBQ Sauce | 400 | False | direct | Eggin with David Rose p.19
+Watermelon Salad with Tequila-Lime Vinaigrette | 450 | False | direct | Eggin with David Rose p.21
+Shrimp and Pear Salad with Calabrian Vinaigrette | 400 | False | direct | Eggin with David Rose p.22
+Chorizo-Arugula Salad with Chorizo Vinaigrette | 400 | False | direct | Eggin with David Rose p.25
+Pulled Pork Egg Rolls | 350 400 | False | wok | Eggin with David Rose p.29
+Oysters Rockefeller | 375 425 | False | direct | Eggin with David Rose p.31
+Pork Belly Burt End Nachos with Pepper Jack Cheese Sauce | 275 400 | False | both | Eggin with David Rose p.32
+Smoked Chicken Chili | 375 | True | indirect | Eggin with David Rose p.35
+Lobster Mac 'n' Cheese | 450 | False | both | Eggin with David Rose p.40
+Mexican Street Corn Skewer | 425 | False | direct | Eggin with David Rose p.44
+Bacon-Cheddar Corn Bread with Honey Butter | 425 | False | indirect | Eggin with David Rose p.45
+Asparagus with Soy Vinaigrette | 450 | False | direct | Eggin with David Rose p.46
+Wok-Fried Vegetable Lo Mein | 425 | False | wok | Eggin with David Rose p.48
+Wok-Fried Beef Fried Rice | 425 | False | wok | Eggin with David Rose p.49
+Lamb Chops with Mango Chutney | 400 | True | direct | Eggin with David Rose p.52
+Pork Chops with Maple-Pecan Butter | 425 | True | direct | Eggin with David Rose p.56
+Guinness BBQ Lamb Breast | 325 400 | True | both | Eggin with David Rose p.58
+Sriracha-Honey BBQ Baby Back Ribs | 300 | True | indirect | Eggin with David Rose p.59
+Jamaican Jerk Chicken with Pineapple-Habanero Sauce | 375 | True | indirect | Eggin with David Rose p.60
+Lemon-Herb Spatchcock Chicken | 375 | True | indirect | Eggin with David Rose p.63
+Honey-Thyme Grilled Quail | 375 | True | direct | Eggin with David Rose p.64
+Gochujang BBQ Big Beef Rib | 300 | True | indirect | Eggin with David Rose p.65
+Jamaican Curry Goat Stew | 400 | True | indirect | Eggin with David Rose p.66
+Afro-Asian Oxtails | 350 | True | both | Eggin with David Rose p.67
+Porcini Porterhouse with Tomato Chimichurri | 225 400 | True | both | Eggin with David Rose p.71
+Sweet and Spicy Pulled Pork | 300 | True | indirect | Eggin with David Rose p.74
+Pork Sparerib Ramen | 375 400 | True | direct | Eggin with David Rose p.76
+Burger with Bacon Jam | 425 | True | direct | Eggin with David Rose p.79
+Lamb Burger with Horseradish Mayo | 400 | True | direct | Eggin with David Rose p.81
+Shiitake Mushroom Burger with Garlic Pickle Aioli | 375 400 | True | both | Eggin with David Rose p.82
+Pastrami Brisket | 250 | True | indirect | Eggin with David Rose p.84
+Tomahawk Prime Rib with Chanterelle Butter | 350 400 | True | both | Eggin with David Rose p.86
+Salt & Pepper Shrimp | 425 | True | wok | Eggin with David Rose p.101
