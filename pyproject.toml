@@ -7,22 +7,24 @@ dependencies = [
     "cachelib==0.13.0",
     "click==8.2.1",
     "colorama==0.4.6",
-    "Flask==3.1.1",
-    "Flask-Scss==0.5",
-    "Flask-Session==0.8.0",
-    "Flask-SQLAlchemy==3.1.1",
+    "flask==3.1.1",
+    "flask-scss==0.5",
+    "flask-session==0.8.0",
+    "flask-sqlalchemy==3.1.1",
     "greenlet==3.2.3",
     "itsdangerous==2.2.0",
-    "Jinja2==3.1.6",
-    "MarkupSafe==3.0.2",
+    "jinja2==3.1.6",
+    "markupsafe==3.0.2",
     "msgspec==0.19.0",
-    "pyScss==1.4.0",
+    "pyscss==1.4.0",
+    "pytest>=9.0.2",
     "six==1.17.0",
-    "SQLAlchemy==2.0.41",
-    "typing_extensions==4.14.0",
-    "Werkzeug==3.1.3",
+    "sqlalchemy==2.0.41",
+    "typing-extensions==4.14.0",
+    "werkzeug==3.1.3",
 ]
 license = "MIT"
+requires-python = ">=3.11"
 
 [dependency-groups]
 dev = [
