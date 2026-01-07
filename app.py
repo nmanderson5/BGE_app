@@ -194,7 +194,7 @@ def login():
         session['username'] = username
         return redirect(url_for('dashboard'))
     else:
-        return render_template("index.html")
+        return render_template("index.html", error="Invalid username or password!")
 
 
 # Register a new user by adding their information to the database
@@ -202,6 +202,8 @@ def login():
 def register():
     username = request.form['username']
     password = request.form['password']
+    if not username or not password:
+        return render_template("index.html", error="Missing username or password!")
     user = User.query.filter_by(username=username).first()
     if user:
         return render_template("index.html", error="User already exists!")
