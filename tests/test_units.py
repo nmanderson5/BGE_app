@@ -1,4 +1,4 @@
-from app import area_acc, area_food
+from BGE_app.project import area_acc, area_food
 
 def test_area_acc():
     assert area_acc("Left Bottom") == "left_bot_acc"
