@@ -13,4 +13,4 @@ EXPOSE 5000
 ENV DEBUG=False
 ENV PORT=5000
 
-CMD ["python3", "app.py"]
+CMD ["python3", "project.py"]

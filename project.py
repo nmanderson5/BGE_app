@@ -8,17 +8,17 @@ from typing import List, Optional
 from werkzeug.security import check_password_hash, generate_password_hash
 
 
-app = Flask(__name__)
-app.secret_key = "MtJ5F3"
+main = Flask(__name__)
+main.secret_key = "MtJ5F3"
 
 # Configure session to not use cookies
-app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "filesystem"
+main.config["SESSION_PERMANENT"] = False
+main.config["SESSION_TYPE"] = "filesystem"
 
 # Configure SQLAlchemy
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///eggs.db"
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_ECHO"] = True
+main.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///eggs.db"
+main.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+main.config["SQLALCHEMY_ECHO"] = True
 
 
 
@@ -28,8 +28,8 @@ class Base(DeclarativeBase):
 
 
 # Initialize the session and database connection
-Session(app)
-db = SQLAlchemy(app, model_class=Base)
+Session(main)
+db = SQLAlchemy(main, model_class=Base)
 
 
 
@@ -95,7 +95,7 @@ class Egg(db.Model):
 
 
 # Create the tables in the database
-with app.app_context():
+with main.app_context():
     db.create_all()
 
 
@@ -167,7 +167,7 @@ def get_names(egg):
 
 
 # Ensure responses aren't cached
-@app.after_request
+@main.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
@@ -177,7 +177,7 @@ def after_request(response):
 
 # Routes
 # Send a user to their dashboard or to login
-@app.route("/", methods=["GET", "POST"])
+@main.route("/", methods=["GET", "POST"])
 def home():
     if "username" in session:
         return redirect(url_for('dashboard'))
@@ -185,7 +185,7 @@ def home():
 
 
 # Login user if username and password hash match database
-@app.route("/login", methods=["POST"])
+@main.route("/login", methods=["POST"])
 def login():
     username = request.form['username']
     password = request.form['password']
@@ -198,7 +198,7 @@ def login():
 
 
 # Register a new user by adding their information to the database
-@app.route("/register", methods=["POST"])
+@main.route("/register", methods=["POST"])
 def register():
     username = request.form['username']
     password = request.form['password']
@@ -220,7 +220,7 @@ def register():
 
 
 # Dashboard gets the user, their egg, and the names of the recipes on it
-@app.route("/dashboard", methods=["GET", "POST"])
+@main.route("/dashboard", methods=["GET", "POST"])
 def dashboard():
     if "username" in session:
         user = db.session.scalar(select(User).where(User.username == session['username']))
@@ -231,14 +231,14 @@ def dashboard():
 
 
 # Logout by removing user from the session
-@app.route("/logout", methods=["GET"])
+@main.route("/logout", methods=["GET"])
 def logout():
     session.pop("username", None)
     return redirect(url_for('home'))
 
 
 # Browse for recipes using the response on the search-form
-@app.route("/browse", methods=["GET", "POST"])
+@main.route("/browse", methods=["GET", "POST"])
 def browse():
     if request.method == "POST":
         srch_term = request.form['term']
@@ -258,7 +258,7 @@ def browse():
 
 
 # Search for recipes that match the current settings on the Egg
-@app.route("/match_egg", methods=["GET"])
+@main.route("/match_egg", methods=["GET"])
 def match_egg():
     user = db.session.scalar(select(User).where(User.username == session['username']))
     egg = user.egg
@@ -275,7 +275,7 @@ def match_egg():
 
 
 # Add accessory
-@app.route("/add_acc", methods=["POST"])
+@main.route("/add_acc", methods=["POST"])
 def add_acc():
     area = request.form.get("area")
     acc = request.form.get("accessory")
@@ -290,7 +290,7 @@ def add_acc():
 
 
 # Add food to Egg
-@app.route("/add_food", methods=["POST"])
+@main.route("/add_food", methods=["POST"])
 def add_food():
     area = request.form.get("area")
     food = request.form .get("food")
@@ -305,7 +305,7 @@ def add_food():
 
 
 # Clear the Egg
-@app.route("/clear", methods=["GET"])
+@main.route("/clear", methods=["GET"])
 def clear():
     user = db.session.scalar(select(User).where(User.username == session['username']))
     egg = user.egg
@@ -325,7 +325,7 @@ def clear():
 
 
 # Set/change the temp on your egg
-@app.route("/set_temp", methods=["POST"])
+@main.route("/set_temp", methods=["POST"])
 def set_temp():
     user = db.session.scalar(select(User).where(User.username == session['username']))
     egg = user.egg
@@ -336,4 +336,4 @@ def set_temp():
 
 
 if __name__ in "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    main.run(host="0.0.0.0", port=5000, debug=False)
