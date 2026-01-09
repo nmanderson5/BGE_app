@@ -1,12 +1,12 @@
 import pytest
-from BGE_app.project import main, db, User, Egg
+from BGE_app.project import app, db, User, Egg
 
-main.config.update({
+app.config.update({
     "TESTING": True,
     })
 
 def test_homepage():
-    with main.test_client() as test_client:
+    with app.test_client() as test_client:
         response = test_client.get('/')
         assert response.status_code == 200
         assert b'Create an account or login!' in response.data
@@ -14,7 +14,7 @@ def test_homepage():
 
 def test_register():
     # Trying to create a new user and checking if it redirects to the user's dashboard
-    with main.test_client() as test_client:
+    with app.test_client() as test_client:
         response = test_client.post('/register', data={
             'username': 'testuser',
             'password': 'test1234'
@@ -33,7 +33,7 @@ def test_register():
 
 def test_login_logout():
     # Trying to log in with the user created in the last test
-    with main.test_client() as test_client:
+    with app.test_client() as test_client:
         response = test_client.post('/login', data={
             'username': 'testuser',
             'password': 'test1234'
@@ -54,11 +54,13 @@ def test_login_logout():
 
 
 def test_browse():
-    with main.test_client() as test_client:
+    # Test that browse get loads page to search from
+    with app.test_client() as test_client:
         response = test_client.get('/browse')
         assert response.status_code == 200
         assert b'Browse for recipes!' in response.data
 
+        # Test that the results are loaded after searching
         response = test_client.post('/browse', data={
             'term': 'Lamb',
             'entree': 'True',
